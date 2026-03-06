@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duke Byte 2.0 | Transform From Beginner to Tech Professional in 8 Weeks</title>
+    <meta name="description" content="Duke Academy's Duke Byte 2.0 - 8-week intensive tech training for African beginners. 9 tracks. Live tutors. Real projects. June 2026.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1B4E8C;
+            --deep-blue: #0F1B2E;
+            --accent-teal: #0CA5A5;
+            --accent-orange: #FF6B35;
+            --light-blue: #E8F4F8;
+            --soft-gray: #F8FAFC;
+            --text-dark: #1F2937;
+            --text-light: #64748B;
+            --white: #FFFFFF;
+            --success-green: #10B981;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 27, 46, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+
+        .logo:hover {
+            opacity: 0.9;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-orange);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--accent-orange), #FF8C42);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .nav-container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--primary-blue) 50%, var(--primary-blue) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 40%, rgba(255, 107, 53, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 60%, rgba(12, 165, 165, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .hero-badge span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: var(--accent-orange);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            animation: slideInUp 0.8s ease-out 0.1s backwards;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: rgba(255, 255, 255, 0.92);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            animation: slideInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            animation: slideInUp 0.8s ease-out 0.3s backwards;
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--white);
+            display: block;
+            font-family: 'Space Mono', monospace;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.75);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 600;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            animation: slideInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 1.1rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-orange), #FF8C42);
+            color: var(--white);
+            box-shadow: 0 12px 30px rgba(255, 107, 53, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 40px rgba(255, 107, 53, 0.45);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 90vh;
+                padding-top: 70px;
+            }
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .cta-group {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+            nav ul {
+                display: none;
+            }
+        }
+
+        /* ===== TRUST BAR ===== */
+        .trust-bar {
+            background: var(--soft-gray);
+            padding: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 10;
+        }
+
+        .trust-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            padding: 0 2rem;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .trust-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent-orange), #FF8C42);
+            border-radius: 6px;
+            color: white;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        /* ===== TRACKS SECTION ===== */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4.5rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(12, 165, 165, 0.1), rgba(255, 107, 53, 0.1));
+            color: var(--primary-blue);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 1.2rem;
+            border: 1px solid rgba(12, 165, 165, 0.2);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--deep-blue);
+            margin-bottom: 1.2rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .tracks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .track-card {
+            background: var(--white);
+            border: 2px solid rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .track-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-teal));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .track-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-blue);
+            box-shadow: 0 25px 50px rgba(27, 78, 140, 0.12);
+        }
+
+        .track-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .track-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, rgba(12, 165, 165, 0.15), rgba(27, 78, 140, 0.1));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .track-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--deep-blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .track-description {
+            color: var(--text-light);
+            line-height: 1.65;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .track-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, rgba(27, 78, 140, 0.08), rgba(12, 165, 165, 0.08));
+            color: var(--primary-blue);
+            padding: 0.4rem 0.9rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(27, 78, 140, 0.15);
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--primary-blue) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 10% 30%, rgba(12, 165, 165, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 70%, rgba(255, 107, 53, 0.08) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .testimonials h2,
+        .testimonials .section-subtitle {
+            color: var(--white);
+        }
+
+        .testimonials .section-badge {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(12, 165, 165, 0.1), rgba(255, 107, 53, 0.05));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .testimonial-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .testimonial-card:hover::before {
+            opacity: 1;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-teal));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .testimonial-info h4 {
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-track {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-quote {
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.75;
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            font-style: italic;
+        }
+
+        .testimonial-result {
+            color: var(--accent-orange);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* ===== HOW IT WORKS ===== */
+        .how-it-works {
+            background: linear-gradient(to bottom, var(--soft-gray), var(--white));
+        }
+
+        .steps-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            gap: 2.5rem;
+            margin-bottom: 3.5rem;
+            position: relative;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .step:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        .step:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .step:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+        .step:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+        .step:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+        .step:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 45px;
+            top: 90px;
+            bottom: -52px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-blue), rgba(27, 78, 140, 0.2));
+        }
+
+        .step-number {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-teal));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2.2rem;
+            font-weight: 800;
+            font-family: 'Space Mono', monospace;
+            box-shadow: 0 12px 30px rgba(27, 78, 140, 0.25);
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            font-size: 1.7rem;
+            color: var(--deep-blue);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            line-height: 1.75;
+            font-size: 1rem;
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing {
+            background: var(--soft-gray);
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border: 2px solid rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+            transition: all 0.4s ease;
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-orange), #FF8C42);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--deep-blue);
+            margin: 1rem 0;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .price-currency {
+            font-size: 1.2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2.5rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.9rem 0;
+            color: var(--text-light);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--success-green);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--primary-blue) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 2rem;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 30% 40%, rgba(255, 107, 53, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 70% 60%, rgba(12, 165, 165, 0.08) 0%, transparent 40%);
+        }
+
+        .cta-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content h2 {
+            color: var(--white);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content p {
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--deep-blue);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-orange);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .tracks-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step {
+                grid-template-columns: 70px 1fr;
+                gap: 1.5rem;
+            }
+
+            .step-number {
+                width: 70px;
+                height: 70px;
+                font-size: 1.7rem;
+            }
+
+            .step:not(:last-child)::after {
+                left: 35px;
+            }
+
+            .trust-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .trust-item {
+                justify-content: center;
+            }
+
+            .pricing-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-col {
+                text-align: center;
+            }
+
+            .footer-col a {
+                display: inline;
+                margin: 0 1rem 0.8rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Duke Byte 2.0</a>
+            <ul>
+                <li><a href="#tracks">Tracks</a></li>
+                <li><a href="#testimonials">Success Stories</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+            <a href="#cta" class="nav-cta">Enroll Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span></span>
+                    Registration Now Open
+                </div>
+                <h1>From Complete Beginner to Confident Tech Professional in 8 Weeks</h1>
+                <p class="hero-subtitle">Duke Academy's intensive training program transforms African beginners into certified professionals across 9 learning tracks. Live tutors. Real projects. Recognized certification.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Weeks</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">9</span>
+                        <span class="stat-label">Tracks</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">300</span>
+                        <span class="stat-label">Spots</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">Jun</span>
+                        <span class="stat-label">Starts</span>
+                    </div>
+                </div>
+
+                <div class="cta-group">
+                    <a href="https://bit.ly/DukeByte2026" class="btn btn-primary">Enroll Now →</a>
+                    <a href="https://duke-academy.base44.app" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="trust-content">
+            <div class="trust-item">
+                <div class="trust-icon">✓</div>
+                Registered Institution (RC 9318440)
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">🌍</div>
+                Pan-African (All Countries Welcome)
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">💳</div>
+                ₦20,000 Program Fee
+            </div>
+        </div>
+    </div>
+
+    <!-- Learning Tracks -->
+    <section id="tracks">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">9 Learning Tracks</span>
+                <h2>Choose Your Path Into Tech</h2>
+                <p class="section-subtitle">Every track is designed for complete beginners. No prior experience required. Just commitment and curiosity.</p>
+            </div>
+
+            <div class="tracks-grid">
+                <div class="track-card reveal">
+                    <div class="track-icon">📊</div>
+                    <h3 class="track-title">Data Analysis</h3>
+                    <p class="track-description">Turn raw data into actionable insights. Learn to analyze, visualize, and communicate data stories.</p>
+                    <div class="track-skills">
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+                </div>
+
+                <div class="track-card reveal">
+                    <div class="track-icon">🔒</div>
+                    <h3 class="track-title">Cybersecurity</h3>
+                    <p class="track-description">Protect systems and data. Learn threat detection, ethical hacking, and security monitoring.</p>
+                    <div class="track-skills">
+                        <span class="skill-tag">Kali Linux</span>
+                        <span class="skill-tag">Wireshark</span>
+                        <span class="skill-tag">Security</span>
+                    </div>
+                </div>
+
+                <div class="track-card reveal">
+                    <div class="track-icon">🎨</div>
+                    <h3 class="track-title">Graphic Design</h3>
+                    <p class="track-description">Create visual content that communicates. Master branding, layout, and design principles.</p>
+                    <div class="track-skills">
+                        <span class="skill-tag">Adobe Suite</span>
+                        <span class="skill-tag">Canva</span>
+                        <span class="skill-tag">Branding</span>
+                    </div>
+                </div>
+
+                <div class="track-card reveal">
+                    <div class="track-icon">✨</div>
+                    <h3 class="track-title">UI/UX Design</h3>
+                    <p class="track-description">Design user experiences that delight. Learn research, prototyping, and user-centered design.</p>
+                    <div class="track-skills">
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Prototyping</span>
+                        <span class="skill-tag">Research</span>
+                    </div>
+                </div>
+
+                <div class="track-card reveal">
+                    <div class="track-icon">🚀</div>
+                    <h3 class="track-title">Product Design</h3>
+                    <p class="track-description">Build products people love. Combine design thinking with business strategy.</p>
+                    <div class="track-skills">
+                        <span class="skill-tag">Design Thinking</span>
+                        <span class="skill-tag">Strategy</span>
+                    </div>
+                </div>
+
+                <div class="track-card reveal">
+                    <div class="track-icon">📋</div>
+                    <h3 class="track-title">Project Management</h3>
+                    <p class="track-description">Lead teams and deliver results. Master Agile, Scrum, and stakeholder management.</p>
+                    <div class="track-skills">
+                        <span class="skill-tag">Agile</span>
+                        <span class="skill-tag">Scrum</span>
+                        <span class="skill-tag">Trello</span>
+                    </div>
+                </div>
+
+                <div class="track-card reveal">
+                    <div class="track-icon">🐍</div>
+                    <h3 class="track-title">Python Programming</h3>
+                    <p class="track-description">Code solutions to real problems. Learn fundamentals, automation, and scripting.</p>
+                    <div class="track-skills">
+                        <span class="skill-tag">Python 3</span>
+                        <span class="skill-tag">Automation</span>
+                        <span class="skill-tag">Scripting</span>
+                    </div>
+                </div>
+
+                <div class="track-card reveal">
+                    <div class="track-icon">💻</div>
+                    <h3 class="track-title">Web Development</h3>
+                    <p class="track-description">Build responsive websites. Learn HTML, CSS, JavaScript, and modern frameworks.</p>
+                    <div class="track-skills">
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Responsive</span>
+                    </div>
+                </div>
+
+                <div class="track-card reveal">
+                    <div class="track-icon">📱</div>
+                    <h3 class="track-title">Digital Marketing</h3>
+                    <p class="track-description">Grow brands online. Master social media, content strategy, and analytics.</p>
+                    <div class="track-skills">
+                        <span class="skill-tag">Social Media</span>
+                        <span class="skill-tag">Content</span>
+                        <span class="skill-tag">Analytics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Success Stories</span>
+                <h2>Meet Duke Byte 1.0 Graduates</h2>
+                <p class="section-subtitle">Real students. Real transformations. Real futures.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">RS</div>
+                        <div class="testimonial-info">
+                            <h4>Roseline Shashere</h4>
+                            <p class="testimonial-track">Project Management</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">"Duke Academy didn't just teach me Agile and Scrum. It taught me that I could lead projects and coordinate teams. I never thought I belonged in tech until Duke proved me wrong."</p>
+                    <p class="testimonial-result">→ Now applying for project coordinator roles</p>
+                </div>
+
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">BH</div>
+                        <div class="testimonial-info">
+                            <h4>Benedict Hananeel</h4>
+                            <p class="testimonial-track">Cybersecurity</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">"I enhanced a basic keylogger program with timer and character count. Six months ago, I didn't know what a keylogger was. Duke Academy equipped me with everything to build and get certified."</p>
+                    <p class="testimonial-result">→ Portfolio project completed & certified</p>
+                </div>
+
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">AJ</div>
+                        <div class="testimonial-info">
+                            <h4>Adedibu John</h4>
+                            <p class="testimonial-track">Data Analysis</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">"Duke Byte 1.0 provided clarity, confidence, and motivation. Through well-organized classes and consistent structure, I gained skills and belief. Tech is for anyone willing to learn. You can do it too."</p>
+                    <p class="testimonial-result">→ Applied for 3 data analyst positions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">The Process</span>
+                <h2>How Duke Byte 2.0 Works</h2>
+                <p class="section-subtitle">A structured, 8-week journey from beginner to certified professional.</p>
+            </div>
+
+            <div class="steps-timeline">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Register & Pay Phase 1</h3>
+                        <p>Complete registration and pay ₦10,000 to secure your spot. You'll be added to the WhatsApp community and receive access to the Student Portal on May 25, 2026.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Watch Pre-Recorded Modules</h3>
+                        <p>Every Monday, a new 30-45 minute instructional video drops. Watch at your own pace, rewind as needed, and take notes. These modules prepare you for live sessions.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Attend Live Q&A & Practicals</h3>
+                        <p>Every Wednesday (Q&A) and Saturday (hands-on practicals), join live Zoom sessions with expert tutors. Ask questions. Follow along. Build together.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Submit Weekly Assignments</h3>
+                        <p>Every Sunday, submit your assignment. Get personalized feedback from tutors within 48 hours. Assignments ensure you're actually learning, not just watching.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Build Your Capstone Project</h3>
+                        <p>Weeks 7-8 are dedicated to your final portfolio project. Build something real. Something you can show employers. Something that proves you did the work.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>Graduate & Get Certified</h3>
+                        <p>Complete 6/8 sessions, submit 6/8 assignments, finish your project, and pay Phase 2. You'll receive your Duke Academy certificate (digital + physical) and career coaching.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Investment</span>
+                <h2>Simple, Transparent Pricing</h2>
+                <p class="section-subtitle">Two payment phases. No hidden fees. Full access to all resources.</p>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-badge">Most Popular</div>
+                <h3 style="font-size: 1.5rem; color: var(--deep-blue); margin-bottom: 0.5rem;">Duke Byte 2.0</h3>
+                <div class="price-amount"><span class="price-currency">₦</span>20,000</div>
+                <p style="color: var(--text-light); margin-bottom: 2rem;">Two payment phases • Phase 1: ₦10,000 | Phase 2: ₦10,000</p>
+                
+                <ul class="pricing-features">
+                    <li>8-week intensive program</li>
+                    <li>All 9 learning tracks access</li>
+                    <li>Live tutoring sessions (Wed & Sat)</li>
+                    <li>Pre-recorded modules</li>
+                    <li>Weekly assignments with feedback</li>
+                    <li>Capstone project guidance</li>
+                    <li>Duke Academy certificate</li>
+                    <li>Career coaching sessions</li>
+                    <li>Pan-African community</li>
+                </ul>
+
+                <a href="https://bit.ly/DukeByte2026" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Secure Your Spot Now</a>
+                <p style="color: var(--text-light); font-size: 0.9rem;">Limited to 300 spots • June 1 start date</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Your Tech Journey Starts Here</h2>
+                <p>300 spots. 9 tracks. 8 weeks. June 1, 2026.<br>Will you be ready, or will you still be "getting ready"?</p>
+                <div class="cta-buttons">
+                    <a href="https://bit.ly/DukeByte2026" class="btn btn-primary">Enroll in Duke Byte 2.0 →</a>
+                    <a href="https://duke-academy.base44.app" class="btn btn-secondary">Learn More About Duke Academy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h3>About Duke Academy</h3>
+                    <p style="display: none;">Building Africa's tech future through intensive, accessible training for beginners across the continent.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <a href="https://duke-academy.base44.app">About Us</a>
+                    <a href="https://bit.ly/Duketutors">Become a Tutor</a>
+                    <a href="mailto:info.dukeanalytics@gmail.com">Contact</a>
+                    <a href="https://wa.me/2348060978504">WhatsApp</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Program Info</h3>
+                    <a href="#tracks">Learning Tracks</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#testimonials">Success Stories</a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://duke-academy.base44.app">About Us</a>
+                <a href="https://bit.ly/Duketutors">Become a Tutor</a>
+                <a href="mailto:info.dukeanalytics@gmail.com">Contact</a>
+                <a href="https://wa.me/2348060978504">WhatsApp</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p><strong>Duke Academy</strong> | RC 9318440 | Pan-African Tech Training Institution</p>
+                <p>Building Africa's Tech Future, One Beginner at a Time ♥</p>
+                <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.6;">&copy; 2026 Duke Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle (future enhancement)
+        // Navbar scroll effect
+        let lastScrollY = window.scrollY;
+        const navbar = document.querySelector('nav');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.style.boxShadow = '0 4px 20px rgba(15, 27, 46, 0.1)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+            lastScrollY = window.scrollY;
+        });
+    </script>
+</body>
+</html>
