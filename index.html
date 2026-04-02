@@ -1,7 +1,8 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5HL086G26"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -12,1395 +13,944 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duke Academy Cohort 2.0 | Transform From a Beginner to a Confident Tech Professional in 8 Weeks</title>
-    <meta name="description" content="Duke Academy Duke Byte 2.0 - 8-week intensive tech training for African beginners. 9 tracks. Live tutors. Real projects. June 2026.">
+    <title>Duke Academy Cohort 2.0 | Building Africa's Tech Future</title>
+    <meta name="description" content="Duke Academy Cohort 2.0 - 8-week intensive tech training.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+        :root {
+            /* Brand Colors based on Logo */
+            --duke-deep-blue: #0F1B2E;
+            --duke-primary-blue: #1B4E8C;
+            --duke-teal: #0CA5A5;
+            --duke-light-blue: #E8F4F8;
+            
+            /* Apple-inspired UI Colors */
+            --bg-body: #FFFFFF;
+            --bg-secondary: #F5F5F7;
+            --text-main: #1D1D1F;
+            --text-secondary: #86868B;
+            --accent-orange: #FF6B35; /* From flyer for CTA contrast */
+            
+            /* Spacing & Layout */
+            --container-width: 1200px;
+            --header-height: 60px;
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 8px;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.06);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.08);
+        }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        :root {
-            --primary-blue: #1B4E8C;
-            --deep-blue: #0F1B2E;
-            --accent-teal: #0CA5A5;
-            --accent-orange: #FF6B35;
-            --light-blue: #E8F4F8;
-            --soft-gray: #F8FAFC;
-            --text-dark: #1F2937;
-            --text-light: #64748B;
-            --white: #FFFFFF;
-            --success-green: #10B981;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-            color: var(--text-dark);
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.5;
             overflow-x: hidden;
-            background: var(--white);
         }
 
+        a { text-decoration: none; color: inherit; transition: color 0.2s ease; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
+
+        /* Utility Classes */
         .container {
-            max-width: 1200px;
+            max-width: var(--container-width);
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 24px;
         }
 
-        /* ===== NAVIGATION ===== */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(15, 27, 46, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 999;
-            padding: 1rem 2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        .section-padding {
+            padding: 120px 0;
         }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: var(--white);
-            text-decoration: none;
-            letter-spacing: -0.01em;
-        }
-
-        .logo:hover {
-            opacity: 0.9;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        nav a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--accent-orange);
-        }
-
-        .nav-cta {
-            background: linear-gradient(135deg, var(--accent-orange), #FF8C42);
-            color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            .nav-container {
-                padding: 0 1rem;
-            }
-        }
-
-        /* ===== HERO SECTION ===== */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--primary-blue) 50%, var(--primary-blue) 100%);
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 40%, rgba(255, 107, 53, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 80% 60%, rgba(12, 165, 165, 0.1) 0%, transparent 40%);
-            pointer-events: none;
-        }
-
-        .hero-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image:
-                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 50px 50px;
-            opacity: 0.4;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 700px;
-            width: 100%;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            color: var(--white);
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 2.5rem;
-            animation: slideInDown 0.8s ease-out;
-        }
-
-        .hero-badge span {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background: var(--accent-orange);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.15;
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-            animation: slideInUp 0.8s ease-out 0.1s backwards;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 2vw, 1.35rem);
-            color: rgba(255, 255, 255, 0.92);
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
-            animation: slideInUp 0.8s ease-out 0.2s backwards;
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-            animation: slideInUp 0.8s ease-out 0.3s backwards;
-        }
-
-        .stat {
-            text-align: left;
-        }
-
-        .stat-number {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--white);
-            display: block;
-            font-family: 'Space Mono', monospace;
-            margin-bottom: 0.3rem;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.75);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            font-weight: 600;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1.25rem;
-            flex-wrap: wrap;
-            animation: slideInUp 0.8s ease-out 0.4s backwards;
+        .text-gradient {
+            background: linear-gradient(135deg, var(--duke-deep-blue) 0%, var(--duke-teal) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.6rem;
-            padding: 1.1rem 2.5rem;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1.05rem;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid transparent;
+            padding: 14px 28px;
+            border-radius: 980px; /* Pill shape */
+            font-weight: 600;
+            font-size: 17px;
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-
-        .btn:hover::before {
-            left: 100%;
+            border: none;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--accent-orange), #FF8C42);
-            color: var(--white);
-            box-shadow: 0 12px 30px rgba(255, 107, 53, 0.35);
+            background-color: var(--duke-deep-blue);
+            color: white;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 18px 40px rgba(255, 107, 53, 0.45);
+            background-color: var(--duke-primary-blue);
+            transform: scale(1.02);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.15);
-            color: var(--white);
-            border: 2px solid rgba(255, 255, 255, 0.4);
+            background-color: rgba(255,255,255,0.8);
+            color: var(--duke-deep-blue);
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.6);
-            transform: translateY(-3px);
+            background-color: white;
+            transform: scale(1.02);
         }
 
-        @media (max-width: 768px) {
-            .hero {
-                min-height: 90vh;
-                padding-top: 70px;
-            }
-            .hero-stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-            .cta-group {
-                flex-direction: column;
-            }
-            .btn {
-                width: 100%;
-            }
-            nav ul {
-                display: none;
-            }
-        }
-
-        /* ===== TRUST BAR ===== */
-        .trust-bar {
-            background: var(--soft-gray);
-            padding: 2rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.08);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            position: relative;
-            z-index: 10;
-        }
-
-        .trust-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            gap: 2.5rem;
-            flex-wrap: wrap;
-            padding: 0 2rem;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 0.9rem;
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            font-weight: 600;
-        }
-
-        .trust-icon {
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--accent-orange), #FF8C42);
-            border-radius: 6px;
+        .btn-cta {
+            background-color: var(--accent-orange);
             color: white;
-            font-size: 0.9rem;
-            flex-shrink: 0;
+            box-shadow: 0 4px 14px rgba(255, 107, 53, 0.3);
+        }
+        
+        .btn-cta:hover {
+            background-color: #ff551a;
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
         }
 
-        /* ===== TRACKS SECTION ===== */
-        section {
-            padding: 6rem 2rem;
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--duke-deep-blue);
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--duke-deep-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            background: radial-gradient(circle at 50% 0%, var(--duke-light-blue) 0%, #FFFFFF 60%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 64px;
+            line-height: 1.05;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--duke-deep-blue);
+            margin-bottom: 24px;
+        }
+
+        .hero-content p {
+            font-size: 21px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .stat-item h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--duke-teal);
+        }
+
+        .stat-item span {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .hero-image-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            padding: 20px;
+            transform: rotateY(-5deg) rotateX(5deg);
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-image-card:hover {
+            transform: rotateY(0deg) rotateX(0deg) scale(1.02);
+        }
+
+        .hero-image-card img {
+            border-radius: var(--radius-md);
+            width: 100%;
+            height: auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: var(--shadow-md);
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 3;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .badge-1 { top: -20px; right: -20px; color: var(--accent-orange); }
+        .badge-2 { bottom: 40px; left: -40px; color: var(--duke-teal); animation-delay: 1s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Tracks Section */
+        .tracks {
+            background-color: var(--bg-secondary);
         }
 
         .section-header {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 4.5rem;
+            margin: 0 auto 80px;
         }
 
-        .section-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, rgba(12, 165, 165, 0.1), rgba(255, 107, 53, 0.1));
-            color: var(--primary-blue);
-            padding: 0.6rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
+        .section-header h2 {
+            font-size: 48px;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 1.2rem;
-            border: 1px solid rgba(12, 165, 165, 0.2);
+            color: var(--duke-deep-blue);
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
         }
 
-        h2 {
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            font-weight: 800;
-            line-height: 1.2;
-            color: var(--deep-blue);
-            margin-bottom: 1.2rem;
-        }
-
-        .section-subtitle {
-            font-size: 1.15rem;
-            color: var(--text-light);
-            line-height: 1.7;
+        .section-header p {
+            font-size: 20px;
+            color: var(--text-secondary);
         }
 
         .tracks-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
         }
 
         .track-card {
-            background: var(--white);
-            border: 2px solid rgba(0, 0, 0, 0.08);
-            border-radius: 16px;
-            padding: 2.5rem 2rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .track-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-teal));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
+            background: white;
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.02);
+            cursor: default;
         }
 
         .track-card:hover {
             transform: translateY(-8px);
-            border-color: var(--primary-blue);
-            box-shadow: 0 25px 50px rgba(27, 78, 140, 0.12);
-        }
-
-        .track-card:hover::before {
-            transform: scaleX(1);
+            box-shadow: var(--shadow-md);
         }
 
         .track-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, rgba(12, 165, 165, 0.15), rgba(27, 78, 140, 0.1));
+            width: 48px;
+            height: 48px;
+            background: var(--duke-light-blue);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--duke-primary-blue);
         }
 
-        .track-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--deep-blue);
-            margin-bottom: 0.75rem;
+        .track-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--duke-primary-blue);
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
-        .track-description {
-            color: var(--text-light);
-            line-height: 1.65;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+        .track-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--duke-deep-blue);
         }
 
-        .track-skills {
+        .track-card p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .track-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.6rem;
+            gap: 8px;
         }
 
-        .skill-tag {
-            background: linear-gradient(135deg, rgba(27, 78, 140, 0.08), rgba(12, 165, 165, 0.08));
-            color: var(--primary-blue);
-            padding: 0.4rem 0.9rem;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border: 1px solid rgba(27, 78, 140, 0.15);
+        .tag {
+            font-size: 12px;
+            padding: 4px 10px;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-weight: 500;
         }
 
-        /* ===== TESTIMONIALS ===== */
-        .testimonials {
-            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--primary-blue) 100%);
-            position: relative;
-            overflow: hidden;
+        /* Timeline Section */
+        .timeline {
+            background: white;
         }
 
-        .testimonials::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 10% 30%, rgba(12, 165, 165, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 90% 70%, rgba(255, 107, 53, 0.08) 0%, transparent 40%);
-            pointer-events: none;
-        }
-
-        .testimonials h2,
-        .testimonials .section-subtitle {
-            color: var(--white);
-        }
-
-        .testimonials .section-badge {
-            background: rgba(255, 255, 255, 0.15);
-            color: var(--white);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 16px;
-            padding: 2.5rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .testimonial-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(12, 165, 165, 0.1), rgba(255, 107, 53, 0.05));
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            z-index: -1;
-        }
-
-        .testimonial-card:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateY(-8px);
-            border-color: rgba(255, 255, 255, 0.25);
-        }
-
-        .testimonial-card:hover::before {
-            opacity: 1;
-        }
-
-        .testimonial-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonial-avatar {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-orange), var(--accent-teal));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-weight: 700;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .testimonial-info h4 {
-            color: var(--white);
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-            font-size: 1.05rem;
-        }
-
-        .testimonial-track {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.9rem;
-        }
-
-        .testimonial-quote {
-            color: rgba(255, 255, 255, 0.95);
-            line-height: 1.75;
-            font-size: 1.05rem;
-            margin-bottom: 1.2rem;
-            font-style: italic;
-        }
-
-        .testimonial-result {
-            color: var(--accent-orange);
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* ===== HOW IT WORKS ===== */
-        .how-it-works {
-            background: linear-gradient(to bottom, var(--soft-gray), var(--white));
-        }
-
-        .steps-timeline {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .step {
-            display: grid;
-            grid-template-columns: 90px 1fr;
-            gap: 2.5rem;
-            margin-bottom: 3.5rem;
-            position: relative;
-            animation: fadeInUp 0.6s ease-out backwards;
-        }
-
-        .step:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-        .step:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        .step:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-        .step:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-        .step:nth-child(5) {
-            animation-delay: 0.5s;
-        }
-        .step:nth-child(6) {
-            animation-delay: 0.6s;
-        }
-
-        .step:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            left: 45px;
-            top: 90px;
-            bottom: -52px;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--primary-blue), rgba(27, 78, 140, 0.2));
-        }
-
-        .step-number {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-teal));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 2.2rem;
-            font-weight: 800;
-            font-family: 'Space Mono', monospace;
-            box-shadow: 0 12px 30px rgba(27, 78, 140, 0.25);
-            flex-shrink: 0;
-        }
-
-        .step-content h3 {
-            font-size: 1.7rem;
-            color: var(--deep-blue);
-            margin-bottom: 0.8rem;
-            font-weight: 700;
-        }
-
-        .step-content p {
-            color: var(--text-light);
-            line-height: 1.75;
-            font-size: 1rem;
-        }
-
-        /* ===== PRICING SECTION ===== */
-        .pricing {
-            background: var(--soft-gray);
-        }
-
-        .pricing-card {
-            background: var(--white);
-            border: 2px solid rgba(0, 0, 0, 0.08);
-            border-radius: 16px;
-            padding: 3rem;
-            text-align: center;
-            max-width: 500px;
-            margin: 0 auto;
-            transition: all 0.4s ease;
-        }
-
-        .pricing-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent-orange), #FF8C42);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .price-amount {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--deep-blue);
-            margin: 1rem 0;
-            font-family: 'Space Mono', monospace;
-        }
-
-        .price-currency {
-            font-size: 1.2rem;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin: 2.5rem 0;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            padding: 0.9rem 0;
-            color: var(--text-light);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .pricing-features li::before {
-            content: '✓';
-            color: var(--success-green);
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        /* ===== FINAL CTA ===== */
-        .final-cta {
-            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--primary-blue) 100%);
-            position: relative;
-            overflow: hidden;
-            padding: 6rem 2rem;
-        }
-
-        .final-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 30% 40%, rgba(255, 107, 53, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 70% 60%, rgba(12, 165, 165, 0.08) 0%, transparent 40%);
-        }
-
-        .cta-content {
-            text-align: center;
+        .timeline-container {
             max-width: 800px;
             margin: 0 auto;
             position: relative;
-            z-index: 1;
         }
 
-        .cta-content h2 {
-            color: var(--white);
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 1.5rem;
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #E5E5E5;
         }
 
-        .cta-content p {
-            color: rgba(255, 255, 255, 0.92);
-            font-size: 1.25rem;
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-        }
-
-        .cta-buttons {
+        .timeline-item {
             display: flex;
-            gap: 1.25rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            gap: 32px;
+            margin-bottom: 60px;
+            position: relative;
         }
 
-        /* ===== FOOTER ===== */
-        footer {
-            background: var(--deep-blue);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 4rem 2rem 2rem;
+        .timeline-number {
+            width: 42px;
+            height: 42px;
+            background: var(--duke-deep-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            z-index: 1;
+            box-shadow: 0 0 0 8px white;
+        }
+
+        .timeline-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--duke-deep-blue);
+        }
+
+        .timeline-content p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Pricing */
+        .pricing {
+            background: var(--duke-deep-blue);
+            color: white;
             text-align: center;
         }
 
-        .footer-content {
-            max-width: 1200px;
+        .pricing-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.2);
+            max-width: 500px;
             margin: 0 auto;
-            padding: 0 2rem;
+            border-radius: var(--radius-lg);
+            padding: 60px 40px;
         }
 
-        .footer-top {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 3rem;
+        .price-tag {
+            font-size: 64px;
+            font-weight: 700;
+            margin: 20px 0;
+            background: linear-gradient(to right, #fff, #ccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .price-sub {
+            font-size: 18px;
+            opacity: 0.7;
+            margin-bottom: 40px;
+        }
+
+        .features-list {
             text-align: left;
+            margin-bottom: 40px;
         }
 
-        .footer-col h3 {
-            color: var(--white);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .footer-col a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.8rem;
-            transition: color 0.3s;
-        }
-
-        .footer-col a:hover {
-            color: var(--accent-orange);
-        }
-
-        .footer-links {
+        .features-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             display: flex;
-            gap: 2rem;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+        }
+
+        .check-icon {
+            color: var(--duke-teal);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            padding: 80px 0 40px;
+            border-top: 1px solid #E5E5E5;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            margin-top: 16px;
+            max-width: 300px;
+            font-size: 14px;
+        }
+
+        .footer-col h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--duke-deep-blue);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--duke-teal);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            margin: 2rem 0;
-            flex-wrap: wrap;
+            color: var(--duke-deep-blue);
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
-        .footer-bottom {
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
+        .social-icon:hover {
+            background: var(--duke-teal);
+            color: white;
+            transform: translateY(-2px);
         }
 
-        .footer-bottom p {
-            margin-bottom: 0.5rem;
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #E5E5E5;
+            color: var(--text-secondary);
+            font-size: 13px;
         }
 
-        /* ===== ANIMATIONS ===== */
-        @keyframes slideInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-        }
-
-        /* ===== SCROLL ANIMATIONS ===== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding: 4rem 1.5rem;
-            }
-
-            .tracks-grid {
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-grid {
                 grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-content h1 {
+                font-size: 48px;
             }
 
-            .step {
-                grid-template-columns: 70px 1fr;
-                gap: 1.5rem;
-            }
-
-            .step-number {
-                width: 70px;
-                height: 70px;
-                font-size: 1.7rem;
-            }
-
-            .step:not(:last-child)::after {
-                left: 35px;
-            }
-
-            .trust-content {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            .trust-item {
+            .hero-stats {
                 justify-content: center;
             }
 
-            .pricing-card {
-                padding: 2rem 1.5rem;
+            .hero-image-wrapper {
+                margin-top: 40px;
+                perspective: none;
             }
 
-            .footer-top {
+            .hero-image-card {
+                transform: none !important;
+            }
+
+            .floating-badge {
+                display: none;
+            }
+
+            .nav-links {
+                display: none;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .section-header h2 {
+                font-size: 32px;
+            }
+            
+            .footer-grid {
                 grid-template-columns: 1fr;
-                text-align: center;
             }
-
-            .footer-col {
-                text-align: center;
-            }
-
-            .footer-col a {
-                display: inline;
-                margin: 0 1rem 0.8rem 0;
-            }
+        }
+        
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">DUKE ACADEMY</a>
-            <ul>
-                <li><a href="#tracks">Tracks</a></li>
-                <li><a href="#testimonials">Success Stories</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-            </ul>
-            <a href="#cta" class="nav-cta">Enroll Now</a>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
+    <header>
+        <div class="container nav-content">
+            <a href="#" class="logo">DUKE ACADEMY</a>
+            <nav class="nav-links">
+                <a href="https://duke-academy.base44.app">About</a>
+                <a href="#tracks">Tracks</a>
+                <a href="#process">Process</a>
+                <a href="#pricing">Pricing</a>
+            </nav>
+            <a href="https://bit.ly/DukeByte2026" class="btn btn-primary" style="padding: 8px 20px; font-size: 14px;">Apply Now</a>
+        </div>
+    </header>
+
     <section class="hero">
-        <div class="hero-grid"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span></span>
-                    Register Now
-                </div>
-                <h1>Enroll In <br>Duke Academy</br>Cohort 2.0</h1>
-                <p class="hero-subtitle"><strong>*Limited slots available.</strong></p>
+        <div class="container hero-grid">
+            <div class="hero-content fade-in">
+                <h1>Enroll In <br><span class="text-gradient">Duke Academy</span><br> Cohort 2.0</h1>
+                <p>Join Cohort 2.0 | 9 intensive tracks | Live expert tutors | Real-world projects | Start your tech career this June.</p>
                 
                 <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">8</span>
-                        <span class="stat-label">Weeks</span>
+                    <div class="stat-item">
+                        <h3>8</h3>
+                        <span>Weeks</span>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">9</span>
-                        <span class="stat-label">Tracks</span>
+                    <div class="stat-item">
+                        <h3>9</h3>
+                        <span>Tracks</span>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">300</span>
-                        <span class="stat-label">Spots</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">June</span>
-                        <span class="stat-label">Starts</span>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <span>Online</span>
                     </div>
                 </div>
 
-                <div class="cta-group">
-                    <a href="https://bit.ly/DukeByte2026" class="btn btn-primary">Enroll Now →</a>
-                    <a href="https://duke-academy.base44.app" class="btn btn-secondary">Learn More</a>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: flex-start;">
+                    <a href="https://bit.ly/DukeByte2026" class="btn btn-cta">Enroll Now</a>
+                    <a href="#tracks" class="btn btn-secondary">View Tracks</a>
+                </div>
+            </div>
+
+            <div class="hero-image-wrapper fade-in">
+                <div class="hero-image-card">
+                    <!-- Updated flyer image without logo, featuring African woman -->
+                    <img src="https://image.qwenlm.ai/public_source/ea08e9b4-e612-4871-98cd-f99a54252612/1dcaa2250-3c50-4d9f-a04a-ec98284f815a.png" alt="Duke Academy Cohort 2.0 Flyer">
+                </div>
+                <div class="floating-badge badge-1">
+                    <span style="width: 8px; height: 8px; background: #FF6B35; border-radius: 50%;"></span>
+                    Early Bird $15
+                </div>
+                <div class="floating-badge badge-2">
+                    <span style="width: 8px; height: 8px; background: #0CA5A5; border-radius: 50%;"></span>
+                    Starts June 1, 2026
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust Bar -->
-    <div class="trust-bar">
-        <div class="trust-content">
-            <div class="trust-item">
-                <div class="trust-icon">✓</div>
-                Registered Institution (RC 9318440)
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">🌍</div>
-                Pan-African (All Countries Welcome)
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">💳</div>
-                NGN20,000 Program Fee
-            </div>
-        </div>
-    </div>
-
-    <!-- Learning Tracks -->
-    <section id="tracks">
+    <section class="section-padding tracks" id="tracks">
         <div class="container">
-            <div class="section-header">
-                <span class="section-badge">9 Learning Tracks</span>
-                <h2>Choose Your Path Into Tech</h2>
-                <p class="section-subtitle">Every track is designed for complete beginners. No prior experience required. Just commitment and hardwork.</p>
+            <div class="section-header fade-in">
+                <h2>Choose Your Path</h2>
+                <p>Comprehensive curriculum designed for absolute beginners. No prior experience needed.</p>
             </div>
 
             <div class="tracks-grid">
-                <div class="track-card reveal">
-                    <div class="track-icon">📊</div>
-                    <h3 class="track-title">Data Analysis</h3>
-                    <p class="track-description">Turn raw data into actionable insights. Learn to analyze, visualize, and communicate data stories.</p>
-                    <div class="track-skills">
-                        <span class="skill-tag">Excel</span>
-                        <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Python</span>
+                <!-- Track 1: Data Analysis -->
+                <div class="track-card fade-in">
+                    <div class="track-icon">
+                        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    </div>
+                    <h3>Data Analysis</h3>
+                    <p>Turn raw data into actionable insights using industry-standard tools.</p>
+                    <div class="track-tags">
+                        <span class="tag">Excel</span>
+                        <span class="tag">Power BI</span>
+                        <span class="tag">SQL</span>
                     </div>
                 </div>
 
-                <div class="track-card reveal">
-                    <div class="track-icon">🔒</div>
-                    <h3 class="track-title">Cybersecurity</h3>
-                    <p class="track-description">Protect systems and data. Learn threat detection, ethical hacking, and security monitoring.</p>
-                    <div class="track-skills">
-                        <span class="skill-tag">Kali Linux</span>
-                        <span class="skill-tag">Wireshark</span>
-                        <span class="skill-tag">Security</span>
+                <!-- Track 2: Cybersecurity -->
+                <div class="track-card fade-in">
+                    <div class="track-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Learn to protect systems and networks from digital attacks.</p>
+                    <div class="track-tags">
+                        <span class="tag">Ethical Hacking</span>
+                        <span class="tag">Network Sec</span>
                     </div>
                 </div>
 
-                <div class="track-card reveal">
-                    <div class="track-icon">🎨</div>
-                    <h3 class="track-title">Graphic Design</h3>
-                    <p class="track-description">Create visual content that communicates. Master branding, layout, and design principles.</p>
-                    <div class="track-skills">
-                        <span class="skill-tag">Adobe Suite</span>
-                        <span class="skill-tag">Canva</span>
-                        <span class="skill-tag">Branding</span>
+                <!-- Track 3: Graphic Design -->
+                <div class="track-card fade-in">
+                    <div class="track-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <p>Master visual communication and branding principles.</p>
+                    <div class="track-tags">
+                        <span class="tag">Adobe Suite</span>
+                        <span class="tag">Canva</span>
                     </div>
                 </div>
 
-                <div class="track-card reveal">
-                    <div class="track-icon">✨</div>
-                    <h3 class="track-title">UI/UX Design</h3>
-                    <p class="track-description">Design user experiences that delight. Learn research, prototyping, and user-centered design.</p>
-                    <div class="track-skills">
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">Prototyping</span>
-                        <span class="skill-tag">Research</span>
+                <!-- Track 4: UI/UX Design -->
+                <div class="track-card fade-in">
+                    <div class="track-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Design intuitive and delightful user experiences.</p>
+                    <div class="track-tags">
+                        <span class="tag">Figma</span>
+                        <span class="tag">Prototyping</span>
                     </div>
                 </div>
 
-                <div class="track-card reveal">
-                    <div class="track-icon">🚀</div>
-                    <h3 class="track-title">Product Design</h3>
-                    <p class="track-description">Build products people love. Combine design thinking with business strategy.</p>
-                    <div class="track-skills">
-                        <span class="skill-tag">Design Thinking</span>
-                        <span class="skill-tag">Strategy</span>
+                <!-- Track 5: Product Design -->
+                <div class="track-card fade-in">
+                    <div class="track-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M12 2v1"></path><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z"></path></svg>
+                    </div>
+                    <h3>Product Design</h3>
+                    <p>Combine design thinking with business strategy.</p>
+                    <div class="track-tags">
+                        <span class="tag">Strategy</span>
+                        <span class="tag">Research</span>
                     </div>
                 </div>
 
-                <div class="track-card reveal">
-                    <div class="track-icon">📋</div>
-                    <h3 class="track-title">Project Management</h3>
-                    <p class="track-description">Lead teams and deliver results. Master Agile, Scrum, and stakeholder management.</p>
-                    <div class="track-skills">
-                        <span class="skill-tag">Agile</span>
-                        <span class="skill-tag">Scrum</span>
-                        <span class="skill-tag">Trello</span>
+                <!-- Track 6: Project Management -->
+                <div class="track-card fade-in">
+                    <div class="track-icon">
+                        <svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 12h6"></path><path d="M9 16h6"></path><path d="M9 8h6"></path></svg>
+                    </div>
+                    <h3>Project Management</h3>
+                    <p>Lead teams and deliver results using Agile methodologies.</p>
+                    <div class="track-tags">
+                        <span class="tag">Agile</span>
+                        <span class="tag">Scrum</span>
                     </div>
                 </div>
 
-                <div class="track-card reveal">
-                    <div class="track-icon">🐍</div>
-                    <h3 class="track-title">Python Programming</h3>
-                    <p class="track-description">Code solutions to real problems. Learn fundamentals, automation, and scripting.</p>
-                    <div class="track-skills">
-                        <span class="skill-tag">Python 3</span>
-                        <span class="skill-tag">Automation</span>
-                        <span class="skill-tag">Scripting</span>
+                <!-- Track 7: Python -->
+                <div class="track-card fade-in">
+                    <div class="track-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                    <h3>Python Programming</h3>
+                    <p>Learn the world's most popular programming language.</p>
+                    <div class="track-tags">
+                        <span class="tag">Automation</span>
+                        <span class="tag">Scripting</span>
                     </div>
                 </div>
 
-                <div class="track-card reveal">
-                    <div class="track-icon">💻</div>
-                    <h3 class="track-title">Web Development</h3>
-                    <p class="track-description">Build responsive websites. Learn HTML, CSS, JavaScript, and modern frameworks.</p>
-                    <div class="track-skills">
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Responsive</span>
+                <!-- Track 8: Web Development -->
+                <div class="track-card fade-in">
+                    <div class="track-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Build responsive, modern websites from scratch.</p>
+                    <div class="track-tags">
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
                     </div>
                 </div>
 
-                <div class="track-card reveal">
-                    <div class="track-icon">📱</div>
-                    <h3 class="track-title">Digital Marketing</h3>
-                    <p class="track-description">Grow brands online. Master social media, content strategy, and analytics.</p>
-                    <div class="track-skills">
-                        <span class="skill-tag">Social Media</span>
-                        <span class="skill-tag">Content</span>
-                        <span class="skill-tag">Analytics</span>
+                <!-- Track 9: Digital Marketing -->
+                <div class="track-card fade-in">
+                    <div class="track-icon">
+                        <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Success Stories</span>
-                <h2>Meet Cohort 1.0 Alumnus</h2>
-                <p class="section-subtitle">Real students. Real transformations. Real futures.</p>
-            </div>
-
-            <div class="testimonials-grid">
-                <div class="testimonial-card reveal">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">RS</div>
-                        <div class="testimonial-info">
-                            <h4>Roseline Shashere</h4>
-                            <p class="testimonial-track">Project Management</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-quote">"Duke Academy didn't just teach me Agile and Scrum. It taught me that I could lead projects and coordinate teams. I never thought I belonged in tech until Duke proved me wrong."</p>
-                    <p class="testimonial-result">→ Now applying for project coordinator roles</p>
-                </div>
-
-                <div class="testimonial-card reveal">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">BH</div>
-                        <div class="testimonial-info">
-                            <h4>Benedict Hananeel</h4>
-                            <p class="testimonial-track">Cybersecurity</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-quote">"I enhanced a basic keylogger program with timer and character count. Six months ago, I didn't know what a keylogger was. Duke Academy equipped me with everything to build and get certified."</p>
-                    <p class="testimonial-result">→ Portfolio project completed & certified</p>
-                </div>
-
-                <div class="testimonial-card reveal">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">AJ</div>
-                        <div class="testimonial-info">
-                            <h4>Adedibu John</h4>
-                            <p class="testimonial-track">Data Analysis</p>
-                        </div>
-                    </div>
-                    <p class="testimonial-quote">"Duke Byte 1.0 provided clarity, confidence, and motivation. Through well-organized classes and consistent structure, I gained skills and belief. Tech is for anyone willing to learn. You can do it too."</p>
-                    <p class="testimonial-result">→ Applied for 3 data analyst positions</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="how-it-works" id="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">The Process</span>
-                <h2>How Cohort 2.0 Works</h2>
-                <p class="section-subtitle">A structured, 8-weeks journey from a beginner to a certified professional.</p>
-            </div>
-
-            <div class="steps-timeline">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Register & Pay Program Fee</h3>
-                        <p>Complete your registration by paying a token amount of NGN20,000 to secure your spot. You'll be added to the Cohort 2.0 WhatsApp community, offered an Admission Letter and gain to access to the Students' Portal on May 25, 2026.</p>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Watch Pre-Recorded Modules</h3>
-                        <p>Every Mondays, a new 30-45 minutes instructional video drops. Watch at your own pace and take notes. These modules prepares you for the live sessions.</p>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Attend Live Sessions & Practicals</h3>
-                        <p>Every Thursdays (Q&A) and Saturday (Byte-Sized Master Class), join live Google Meet sessions with expert tutors. Ask questions. Follow through and build.</p>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Submit Weekly Assignments</h3>
-                        <p>Every Sundays, submit your assignment(s). Get personalized feedback from tutors within 48 hours. Assignments ensure you're actually learning, not just watching.</p>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Build Your Capstone Project</h3>
-                        <p>Weeks 7-8 are dedicated to your final portfolio project. You'll build something real. Something you can show your employers, potential clients or clients.</p>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">6</div>
-                    <div class="step-content">
-                        <h3>Graduate & Get Certified</h3>
-                        <p>Complete 6/8 sessions, submit 6/8 assignments, finish your project, and pay the Program fee. You'll receive your Duke Academy certificate (digital / physical) and Post program career coaching.</p>
+                    <h3>Digital Marketing</h3>
+                    <p>Grow brands online through social media and content.</p>
+                    <div class="track-tags">
+                        <span class="tag">Social Media</span>
+                        <span class="tag">SEO</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing -->
-    <section class="pricing" id="pricing">
+    <section class="section-padding timeline" id="process">
         <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Investment</span>
-                <h2>Simple, Transparent Pricing</h2>
-                <p class="section-subtitle">One time payment. No hidden fees. Full access to all resources.</p>
+            <div class="section-header fade-in">
+                <h2>How It Works</h2>
+                <p>A structured journey from registration to certification.</p>
             </div>
 
-            <div class="pricing-card">
-                <div class="pricing-badge">Most Popular</div>
-                <h3 style="font-size: 1.5rem; color: var(--deep-blue); margin-bottom: 0.5rem;">Cohort 2.0</h3>
-                <div class="price-amount"><span class="price-currency">NGN</span>20,000</div>
-                <p style="color: var(--text-light); margin-bottom: 2rem;">Program Fee</p>
+            <div class="timeline-container">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3>Register & Secure Spot</h3>
+                        <p>Pay the program fee of NGN20,000 to secure your slot. You'll get immediate access to the student portal and community.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3>Learn & Build</h3>
+                        <p>Watch pre-recorded modules weekly, attend live Q&A sessions on Thursdays, and masterclasses on Saturdays.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3>Capstone Project</h3>
+                        <p>Apply your skills by building a real-world portfolio project in the final two weeks.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h3>Graduate</h3>
+                        <p>Complete your assignments and project to receive your Duke Academy certificate and career coaching.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding pricing" id="pricing">
+        <div class="container">
+            <div class="pricing-card fade-in">
+                <h2 style="font-size: 32px; margin-bottom: 10px;">Cohort 2.0</h2>
+                <p style="opacity: 0.8;">Full Access Pass</p>
                 
-                <ul class="pricing-features">
-                    <li>8-week intensive program</li>
-                    <li>All 9 learning tracks access</li>
-                    <li>Live tutoring sessions (Wed & Sat)</li>
-                    <li>Pre-recorded modules</li>
-                    <li>Weekly assignments with feedback</li>
-                    <li>Capstone project guidance</li>
-                    <li>Duke Academy certificate</li>
-                    <li>Career coaching sessions</li>
-                    <li>Pan-African community</li>
+                <div class="price-tag">NGN 20,000</div>
+                <p class="price-sub">One-time payment. No hidden fees.</p>
+
+                <ul class="features-list">
+                    <li><span class="check-icon">✓</span> 8-Week Intensive Program</li>
+                    <li><span class="check-icon">✓</span> Access to All 9 Tracks</li>
+                    <li><span class="check-icon">✓</span> Live Tutoring & Mentorship</li>
+                    <li><span class="check-icon">✓</span> Capstone Project Guidance</li>
+                    <li><span class="check-icon">✓</span> Official Certificate</li>
+                    <li><span class="check-icon">✓</span> Pan-African Community Access</li>
                 </ul>
 
-                <a href="https://bit.ly/DukeByte2026" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Secure Your Spot Now</a>
-                <p style="color: var(--text-light); font-size: 0.9rem;">Limited to 300 spots • June 1 start date</p>
+                <a href="https://bit.ly/DukeByte2026" class="btn btn-cta" style="width: 100%;">Secure Your Spot</a>
+                <p style="margin-top: 16px; font-size: 13px; opacity: 0.6;">Limited to 300 students</p>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="final-cta" id="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Learn A Tech Skill With Us</h2>
-                <p>300 spots | 9 tracks | 8 weeks | June 1, 2026.<br>Join the move now!</p>
-                <div class="cta-buttons">
-                    <a href="https://bit.ly/DukeByte2026" class="btn btn-primary">Enroll in Cohort 2.0 →</a>
-                    <a href="https://duke-academy.base44.app" class="btn btn-secondary">Learn More About Duke Academy</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-
-            <div class="footer-top">
-                <div class="footer-col">
-                    <h3>About Duke Academy</h3>
-                    <p style="display: none;">Building Africa's tech future through intensive, accessible training for beginners across the continent.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">DUKE ACADEMY</a>
+                    <p>Building Africa's tech future through intensive, accessible training for beginners across the continent.</p>
+                    <div class="social-links">
+                        <a href="https://www.Instagram.com/duke__academy" target="_blank" class="social-icon" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://www.linkedIn.com/company/duke-academi" target="_blank" class="social-icon" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
                 </div>
                 <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <a href="https://duke-academy.base44.app">About Us</a>
-                    <a href="https://bit.ly/DukeTutors">Become a Tutor</a>
-                    <a href="mailto:info.dukeanalytics@gmail.com">Contact</a>
-                    <a href="https://wa.me/2348060978504">WhatsApp</a>
+                    <h4>Program</h4>
+                    <ul>
+                        <li><a href="#tracks">Tracks</a></li>
+                        <li><a href="#process">How it Works</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>Program Info</h3>
-                    <a href="#tracks">Learning Tracks</a>
-                    <a href="#how-it-works">How It Works</a>
-                    <a href="#pricing">Pricing</a>
-                    <a href="#testimonials">Success Stories</a>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="https://duke-academy.base44.app">About Us</a></li>
+                        <li><a href="https://bit.ly/DukeTutors">Become a Tutor</a></li>
+                        <li><a href="mailto:info.dukeanalytics@gmail.com">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://wa.me/2348060978504">WhatsApp</a></li>
+                        <li><a href="https://www.Instagram.com/duke__academy">Instagram</a></li>
+                        <li><a href="https://www.linkedIn.com/company/duke-academi">LinkedIn</a></li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="footer-links">
-                <a href="https://duke-academy.base44.app">About Us</a>
-                <a href="https://bit.ly/DukeTutors">Become a Tutor</a>
-                <a href="mailto:info.dukeanalytics@gmail.com">Contact</a>
-                <a href="https://wa.me/2348060978504">WhatsApp</a>
-            </div>
-
-            <div class="footer-bottom">
-                <p><strong>Duke Academy</strong> | RC 9318440 | Pan-African Tech Training Institution</p>
-                <p>Building Africa's Tech Future, One Beginner at a Time ♥</p>
-                <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.6;">&copy; 2026 Duke Academy. All rights reserved.</p>
+            <div class="copyright">
+                <p>&copy; 2026 Duke Academy (RC 9318440). All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Scroll reveal animation
-        const revealElements = document.querySelectorAll('.reveal');
-        
-        const observer = new IntersectionObserver((entries) => {
+        // Simple Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
         });
 
-        revealElements.forEach(el => observer.observe(el));
-
-        // Smooth scroll for navigation links
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    document.querySelector(href).scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
-        });
-
-        // Mobile menu toggle (future enhancement)
-        // Navbar scroll effect
-        let lastScrollY = window.scrollY;
-        const navbar = document.querySelector('nav');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.style.boxShadow = '0 4px 20px rgba(15, 27, 46, 0.1)';
-            } else {
-                navbar.style.boxShadow = 'none';
-            }
-            lastScrollY = window.scrollY;
         });
     </script>
 </body>
 </html>
+```
